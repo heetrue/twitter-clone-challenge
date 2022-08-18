@@ -9,10 +9,8 @@ module.exports = {
   entry: './src/index.tsx',
   devServer: {
     historyApiFallback: true,
-    inline: true,
     port: 3000,
     hot: true,
-    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
