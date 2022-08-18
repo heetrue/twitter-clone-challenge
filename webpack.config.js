@@ -1,13 +1,14 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const prod = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  mode: prod ? 'production' : 'development',
+  mode: 'development',
   devtool: prod ? 'hidden-source-map' : 'eval',
   entry: './src/index.tsx',
   devServer: {
+    static: { directory: path.join(__dirname, 'dist') },
     historyApiFallback: true,
     port: 3000,
     hot: true,
@@ -21,6 +22,32 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: ['babel-loader', 'ts-loader'],
+      },
+      {
+        test: /.jsx?$/,
+        include: [path.resolve(__dirname, 'src')],
+        exclude: [path.resolve(__dirname, 'node_modules')],
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.css$/i,
+        include: path.resolve(__dirname, 'src'),
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: ['postcss-preset-env'],
+                implementation: require('postcss'), // postcss 8
+                postcssOptions: {
+                  config: path.resolve(__dirname, '../postcss.config.js'),
+                },
+              },
+            },
+          },
+        ],
       },
     ],
   },
