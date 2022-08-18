@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --mode development --open --hot",
-    "build": "webpack --mode production",
-    "prestart": "npm build",
-    "start": "webpack --mode development",
+    "start:dev": "webpack serve --progress --mode development",
+    "start:build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
