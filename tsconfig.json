@@ -11,10 +11,10 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
+    "baseUrl": "src",
     "outDir": "./dist",
     "moduleResolution": "node"
   },
-  "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["src", "index.d.ts"],
+  "exclude": ["node_modules"]
 }
