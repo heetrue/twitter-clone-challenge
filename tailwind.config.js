@@ -11,7 +11,8 @@ module.exports = {
         13: '3.125rem',
       },
       colors: {
-        blue: '#1d9bf0',
+        blue: '#1d9aee',
+        'dark-blue': '#1a8dda',
       },
     },
   },

@@ -75,7 +75,7 @@ const Header = () => {
 
         <button
           type="button"
-          className="w-11/12 h-13 px-8 my-4 bg-blue rounded-full text-base font-bold text-white"
+          className="w-11/12 h-13 px-8 my-4 bg-blue hover:bg-dark-blue rounded-full text-base font-bold text-white transition duration-150 hover:ease-out"
         >
           Tweet
         </button>
