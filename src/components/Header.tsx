@@ -18,11 +18,11 @@ const Header = () => {
       </h1>
 
       <nav>
-        <h1>Global Navigation Menu</h1>
+        <h1 className="sr-only">Global Navigation Menu</h1>
         <ul>
           <li>
             <a href="/home">
-              <span>Current page</span>
+              <span className="sr-only">Current page</span>
               <HomeIcon width="26" height="26" fill="#0f1419" />
               Home
             </a>
