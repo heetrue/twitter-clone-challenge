@@ -20,53 +20,53 @@ const Header = () => {
 
       <nav>
         <h1 className="sr-only">Global Navigation Menu</h1>
-        <ul>
+        <ul className="flex-row">
           <li>
-            <a href="/home">
+            <a href="/home" className="text-xl">
               <span className="sr-only">Current page</span>
               <HomeIcon width="26" height="26" fill="#0f1419" />
               Home
             </a>
           </li>
           <li>
-            <a href="/explore">
+            <a href="/explore" className="text-xl">
               <HashIcon width="26" height="26" fill="#0f1419" />
               Explore
             </a>
           </li>
           <li>
-            <a href="/notifications">
+            <a href="/notifications" className="text-xl">
               <strong aria-label="5 Unread notifications">5</strong>
               <BellIcon width="26" height="26" fill="#0f1419" />
               Notifications
             </a>
           </li>
           <li>
-            <a href="/messages">
+            <a href="/messages" className="text-xl">
               <MessageIcon width="26" height="26" fill="#0f1419" />
               Messages
             </a>
           </li>
           <li>
-            <a href="/bookmarks">
+            <a href="/bookmarks" className="text-xl">
               <BookmarkIcon width="26" height="26" fill="#0f1419" />
               Bookmarks
             </a>
           </li>
           <li>
-            <a href="/lists">
+            <a href="/lists" className="text-xl">
               <FileIcon width="26" height="26" fill="#0f1419" />
               Lists
             </a>
           </li>
           <li>
-            <a href="/profile">
+            <a href="/profile" className="text-xl">
               <UserIcon width="26" height="26" fill="#0f1419" />
               Profile
             </a>
           </li>
           <li>
-            <button type="button">
+            <button type="button" className="text-xl">
               <MoreCircleIcon width="26" height="26" fill="#0f1419" />
               More
             </button>
