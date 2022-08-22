@@ -59,10 +59,10 @@ const Header = () => {
         <h1 className="sr-only">Global Navigation Menu</h1>
         <ul>
           {MenuList.map(menu => (
-            <li className="py-1">
+            <li key={menu.title} className="py-1">
               <a href={menu.link} className="w-full">
                 <div className="w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
-                  {menu.icon}
+                  <div>{menu.icon}</div>
                   <h2 className="text-xl">{menu.title}</h2>
                 </div>
               </a>
