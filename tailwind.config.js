@@ -5,6 +5,13 @@ module.exports = {
     extend: {
       width: {
         68: '17.1875rem',
+        '11/12': '90%',
+      },
+      height: {
+        13: '3.125rem',
+      },
+      colors: {
+        blue: '#1d9bf0',
       },
     },
   },

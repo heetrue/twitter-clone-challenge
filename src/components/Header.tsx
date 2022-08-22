@@ -7,7 +7,6 @@ import BookmarkIcon from 'assets/icons/icon-bookmark.svg';
 import FileIcon from 'assets/icons/icon-file.svg';
 import UserIcon from 'assets/icons/icon-user.svg';
 import MoreCircleIcon from 'assets/icons/icon-more-circle.svg';
-import Button from './common/Button';
 
 const Header = () => {
   return (
@@ -74,7 +73,12 @@ const Header = () => {
           </li>
         </ul>
 
-        <Button name="Tweet" />
+        <button
+          type="button"
+          className="w-11/12 h-13 px-8 my-4 bg-blue rounded-full text-base font-bold text-white"
+        >
+          Tweet
+        </button>
       </nav>
     </header>
   );
