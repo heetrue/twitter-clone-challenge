@@ -50,7 +50,7 @@ const MenuList = [
 
 const Header = () => {
   return (
-    <header className="w-68 px-3">
+    <header className="flex-col w-68 h-full px-3">
       <h1>
         <a href="/">
           <Logo width="50" height="30" />
