@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import Logo from 'assets/logo.svg';
 import HomeIcon from 'assets/icons/icon-home.svg';
 import HashIcon from 'assets/icons/icon-hash.svg';
@@ -11,7 +13,7 @@ import MoreCircleIcon from 'assets/icons/icon-more-circle.svg';
 const MenuList = [
   {
     title: 'Home',
-    link: '/home',
+    link: '/',
     icon: HomeIcon,
   },
   {
@@ -60,12 +62,12 @@ const Header = () => {
         <ul>
           {MenuList.map(menu => (
             <li key={menu.title} className="py-1">
-              <a href={menu.link} className="w-full">
+              <Link to={menu.link} className="w-full">
                 <div className="w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
                   <div>{menu.icon}</div>
                   <h2 className="text-xl">{menu.title}</h2>
                 </div>
-              </a>
+              </Link>
             </li>
           ))}
           <li className="py-1">

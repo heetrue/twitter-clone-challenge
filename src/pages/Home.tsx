@@ -1,11 +1,5 @@
-import Header from 'components/Header';
-
-const Main = () => {
-  return (
-    <>
-      <Header />
-    </>
-  );
+const Home = () => {
+  return <>Test</>;
 };
 
-export default Main;
+export default Home;
