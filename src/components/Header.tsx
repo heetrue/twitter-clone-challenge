@@ -10,7 +10,7 @@ import MoreCircleIcon from 'assets/icons/icon-more-circle.svg';
 
 const Header = () => {
   return (
-    <header>
+    <header className="w-68">
       <h1>
         <a href="/">
           <Logo width="50" height="30" />
