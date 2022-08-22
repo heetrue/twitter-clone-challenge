@@ -8,6 +8,44 @@ import FileIcon from 'assets/icons/icon-file.svg';
 import UserIcon from 'assets/icons/icon-user.svg';
 import MoreCircleIcon from 'assets/icons/icon-more-circle.svg';
 
+const MenuList = [
+  {
+    title: 'Home',
+    link: '/home',
+    icon: HomeIcon,
+  },
+  {
+    title: 'Explore',
+    link: '/explore',
+    icon: HashIcon,
+  },
+  {
+    title: 'Notifications',
+    link: '/notifications',
+    icon: BellIcon,
+  },
+  {
+    title: 'Messages',
+    link: '/messages',
+    icon: MessageIcon,
+  },
+  {
+    title: 'Bookmarks',
+    link: '/bookmarks',
+    icon: BookmarkIcon,
+  },
+  {
+    title: 'Lists',
+    link: '/lists',
+    icon: FileIcon,
+  },
+  {
+    title: 'Profile',
+    link: '/profile',
+    icon: UserIcon,
+  },
+];
+
 const Header = () => {
   return (
     <header className="w-68 px-3">
@@ -19,8 +57,19 @@ const Header = () => {
 
       <nav>
         <h1 className="sr-only">Global Navigation Menu</h1>
-        <ul className="flex-row">
-          <li>
+        <ul>
+          {MenuList.map(menu => (
+            <li className="py-1">
+              <a href={menu.link}>
+                <div className="w-fit p-3 rounded-full">
+                  {menu.icon}
+                  <h2 className="text-xl">{menu.title}</h2>
+                </div>
+              </a>
+            </li>
+          ))}
+
+          {/* <li>
             <a href="/home" className="text-xl">
               <span className="sr-only">Current page</span>
               <HomeIcon width="26" height="26" fill="#0f1419" />
@@ -35,7 +84,9 @@ const Header = () => {
           </li>
           <li>
             <a href="/notifications" className="text-xl">
-              <strong aria-label="5 Unread notifications">5</strong>
+              <strong aria-label="5 Unread notifications" className="">
+                5
+              </strong>
               <BellIcon width="26" height="26" fill="#0f1419" />
               Notifications
             </a>
@@ -63,10 +114,10 @@ const Header = () => {
               <UserIcon width="26" height="26" fill="#0f1419" />
               Profile
             </a>
-          </li>
-          <li>
+          </li> */}
+          <li className="p-3">
             <button type="button" className="text-xl">
-              <MoreCircleIcon width="26" height="26" fill="#0f1419" />
+              {/* <MoreCircleIcon width="26" height="26" fill="#0f1419" /> */}
               More
             </button>
             {/* DROPDOWN MENU */}
