@@ -1,9 +1,9 @@
-import Button from 'components/common/Button';
+import Header from 'components/Header';
 
 const Main = () => {
   return (
     <>
-      <Button name="Tweet" />
+      <Header />
     </>
   );
 };
