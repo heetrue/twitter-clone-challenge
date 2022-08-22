@@ -60,16 +60,34 @@ const Header = () => {
         <ul>
           {MenuList.map(menu => (
             <li className="py-1">
-              <a href={menu.link}>
-                <div className="w-fit p-3 rounded-full">
+              <a href={menu.link} className="w-full">
+                <div className="w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
                   {menu.icon}
                   <h2 className="text-xl">{menu.title}</h2>
                 </div>
               </a>
             </li>
           ))}
+          <li className="py-1">
+            <button type="button" className="w-full">
+              <div className="w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
+                {/* <MoreCircleIcon width="26" height="26" fill="#0f1419" /> */}
+                <h2 className="text-xl">More</h2>
+              </div>
+            </button>
+            {/* DROPDOWN MENU */}
+          </li>
+        </ul>
 
-          {/* <li>
+        <button
+          type="button"
+          className="w-11/12 h-13 px-8 my-4 bg-blue hover:bg-dark-blue rounded-full text-base font-bold text-white transition duration-150 hover:ease-out"
+        >
+          Tweet
+        </button>
+      </nav>
+
+      {/* <li>
             <a href="/home" className="text-xl">
               <span className="sr-only">Current page</span>
               <HomeIcon width="26" height="26" fill="#0f1419" />
@@ -115,22 +133,6 @@ const Header = () => {
               Profile
             </a>
           </li> */}
-          <li className="p-3">
-            <button type="button" className="text-xl">
-              {/* <MoreCircleIcon width="26" height="26" fill="#0f1419" /> */}
-              More
-            </button>
-            {/* DROPDOWN MENU */}
-          </li>
-        </ul>
-
-        <button
-          type="button"
-          className="w-11/12 h-13 px-8 my-4 bg-blue hover:bg-dark-blue rounded-full text-base font-bold text-white transition duration-150 hover:ease-out"
-        >
-          Tweet
-        </button>
-      </nav>
     </header>
   );
 };
