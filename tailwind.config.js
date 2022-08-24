@@ -14,6 +14,9 @@ module.exports = {
         blue: '#1d9aee',
         'dark-blue': '#1a8dda',
       },
+      fontSize: {
+        15: ['15px', '20px'],
+      },
     },
   },
   variants: {
