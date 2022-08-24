@@ -49,6 +49,48 @@ const MenuList = [
   {
     title: 'More',
     icon: MoreCircleIcon,
+    dropdown: [
+      {
+        title: 'Topics',
+        link: '/topics',
+      },
+      {
+        title: 'Moments',
+        link: '/i/moment_maker',
+      },
+      {
+        title: 'Newsletters',
+        link: '/i/newsletters',
+      },
+      {
+        title: 'Twitter for Professionals',
+        link: '/i/flow/convert_to_professional',
+      },
+      {
+        title: 'Twitter Ads',
+        link: '/',
+      },
+      {
+        title: 'Analytics',
+        link: '/',
+      },
+      {
+        title: 'Settings and privacy',
+        link: '/settings/account',
+      },
+      {
+        title: 'Help Center',
+        link: '/',
+      },
+      {
+        title: 'Display',
+        link: '/i/display',
+      },
+      {
+        title: 'Keyboard shortcuts',
+        link: '/i/keyboard_shortcuts',
+      },
+    ],
   },
 ];
 
@@ -83,7 +125,13 @@ const Navigation = () => {
                   <h2 className="text-xl">{menu.title}</h2>
                 </div>
                 {/* DROPDOWN MENU */}
-                {isOpen && <div>DROPDOWN OPENED</div>}
+                {menu.dropdown &&
+                  isOpen &&
+                  menu.dropdown.map(item => (
+                    <div>
+                      <Link to={item.link}>{item.title}</Link>
+                    </div>
+                  ))}
               </button>
             )}
           </li>
