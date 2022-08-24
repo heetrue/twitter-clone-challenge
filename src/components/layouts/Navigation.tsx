@@ -130,7 +130,9 @@ const Navigation = () => {
                     isOpen &&
                     menu.dropdown.map(item => (
                       <Link to={item.link}>
-                        <h3 className="p-4 text-15 text-left">{item.title}</h3>
+                        <h3 className="p-4 text-15 text-left hover:bg-slate-100 transition duration-100 hover:ease-in">
+                          {item.title}
+                        </h3>
                       </Link>
                     ))}
                 </div>
