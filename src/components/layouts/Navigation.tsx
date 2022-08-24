@@ -118,20 +118,22 @@ const Navigation = () => {
               <button
                 type="button"
                 onClick={handleMoreClick}
-                className="w-full"
+                className="w-full relative"
               >
                 <div className="w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
                   <div>{menu.icon}</div>
                   <h2 className="text-xl">{menu.title}</h2>
                 </div>
                 {/* DROPDOWN MENU */}
-                {menu.dropdown &&
-                  isOpen &&
-                  menu.dropdown.map(item => (
-                    <div>
-                      <Link to={item.link}>{item.title}</Link>
-                    </div>
-                  ))}
+                <div className="flex-col absolute bottom-0 bg-white rounded drop-shadow-md">
+                  {menu.dropdown &&
+                    isOpen &&
+                    menu.dropdown.map(item => (
+                      <Link to={item.link}>
+                        <h3 className="p-4 text-15 text-left">{item.title}</h3>
+                      </Link>
+                    ))}
+                </div>
               </button>
             )}
           </li>
