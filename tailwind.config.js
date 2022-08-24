@@ -8,7 +8,7 @@ module.exports = {
         '11/12': '90%',
       },
       height: {
-        13: '3.125rem',
+        13: '52px',
       },
       colors: {
         blue: '#1d9aee',
