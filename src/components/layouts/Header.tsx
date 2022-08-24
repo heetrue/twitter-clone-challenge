@@ -46,13 +46,17 @@ const MenuList = [
     link: '/profile',
     icon: UserIcon,
   },
+  {
+    title: 'More',
+    icon: MoreCircleIcon,
+  },
 ];
 
 const Header = () => {
   return (
     <header className="flex-col w-68 h-full px-3">
-      <h1>
-        <a href="/">
+      <h1 className="w-13 h-13 rounded-full hover:bg-black">
+        <a href="/" className="flex justify-center content-center">
           <Logo width="50" height="30" />
         </a>
       </h1>
@@ -62,23 +66,24 @@ const Header = () => {
         <ul>
           {MenuList.map(menu => (
             <li key={menu.title} className="py-1">
-              <Link to={menu.link} className="w-full">
-                <div className="w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
-                  <div>{menu.icon}</div>
-                  <h2 className="text-xl">{menu.title}</h2>
-                </div>
-              </Link>
+              {menu.link ? (
+                <Link to={menu.link} className="w-full">
+                  <div className="w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
+                    <div>{menu.icon}</div>
+                    <h2 className="text-xl">{menu.title}</h2>
+                  </div>
+                </Link>
+              ) : (
+                <button type="button" className="w-full">
+                  <div className="w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
+                    <div>{menu.icon}</div>
+                    <h2 className="text-xl">{menu.title}</h2>
+                  </div>
+                </button>
+                /* DROPDOWN MENU */
+              )}
             </li>
           ))}
-          <li className="py-1">
-            <button type="button" className="w-full">
-              <div className="w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
-                {/* <MoreCircleIcon width="26" height="26" fill="#0f1419" /> */}
-                <h2 className="text-xl">More</h2>
-              </div>
-            </button>
-            {/* DROPDOWN MENU */}
-          </li>
         </ul>
 
         <button
