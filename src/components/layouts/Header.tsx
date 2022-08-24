@@ -56,6 +56,10 @@ const MenuList = [
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
 
+  const handleMoreClick = () => {
+    return setOpen(prev => !prev);
+  };
+
   return (
     <header className="flex-col w-68 h-full px-3">
       <h1 className="w-13 h-13 rounded-full hover:bg-black">
@@ -77,13 +81,18 @@ const Header = () => {
                   </div>
                 </Link>
               ) : (
-                <button type="button" className="w-full">
+                <button
+                  type="button"
+                  onClick={handleMoreClick}
+                  className="w-full"
+                >
                   <div className="w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
                     <div>{menu.icon}</div>
                     <h2 className="text-xl">{menu.title}</h2>
                   </div>
+                  {/* DROPDOWN MENU */}
+                  {isOpen && <div>DROPDOWN OPENED</div>}
                 </button>
-                /* DROPDOWN MENU */
               )}
             </li>
           ))}
