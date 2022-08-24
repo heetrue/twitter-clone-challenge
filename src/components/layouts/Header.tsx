@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Logo from 'assets/logo.svg';
@@ -53,6 +54,8 @@ const MenuList = [
 ];
 
 const Header = () => {
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <header className="flex-col w-68 h-full px-3">
       <h1 className="w-13 h-13 rounded-full hover:bg-black">
