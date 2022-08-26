@@ -111,7 +111,7 @@ const Navigation = () => {
               <Link to={menu.link} className="w-full">
                 <div className="flex content-center gap-5 w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
                   <div>{menu.icon}</div>
-                  <h2 className="text-xl">{menu.title}</h2>
+                  <h2 className="text-xl mr-4">{menu.title}</h2>
                 </div>
               </Link>
             ) : (
@@ -122,7 +122,7 @@ const Navigation = () => {
               >
                 <div className="flex content-center gap-5 w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
                   <div>{menu.icon}</div>
-                  <h2 className="text-xl">{menu.title}</h2>
+                  <h2 className="text-xl mr-4">{menu.title}</h2>
                 </div>
                 {/* DROPDOWN MENU */}
                 <div className="flex-col absolute bottom-0 bg-white rounded drop-shadow-md">
