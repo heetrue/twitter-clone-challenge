@@ -14,41 +14,41 @@ const MenuList = [
   {
     title: 'Home',
     link: '/',
-    icon: HomeIcon,
+    icon: <HomeIcon width="26" height="26" fill="#0f1419" />,
   },
   {
     title: 'Explore',
     link: '/explore',
-    icon: HashIcon,
+    icon: <HashIcon width="26" height="26" fill="#0f1419" />,
   },
   {
     title: 'Notifications',
     link: '/notifications',
-    icon: BellIcon,
+    icon: <BellIcon width="26" height="26" fill="#0f1419" />,
   },
   {
     title: 'Messages',
     link: '/messages',
-    icon: MessageIcon,
+    icon: <MessageIcon width="26" height="26" fill="#0f1419" />,
   },
   {
     title: 'Bookmarks',
     link: '/bookmarks',
-    icon: BookmarkIcon,
+    icon: <BookmarkIcon width="26" height="26" fill="#0f1419" />,
   },
   {
     title: 'Lists',
     link: '/lists',
-    icon: FileIcon,
+    icon: <FileIcon width="26" height="26" fill="#0f1419" />,
   },
   {
     title: 'Profile',
     link: '/profile',
-    icon: UserIcon,
+    icon: <UserIcon width="26" height="26" fill="#0f1419" />,
   },
   {
     title: 'More',
-    icon: MoreCircleIcon,
+    icon: <MoreCircleIcon width="26" height="26" fill="#0f1419" />,
     dropdown: [
       {
         title: 'Topics',
@@ -109,7 +109,7 @@ const Navigation = () => {
           <li key={menu.title} className="py-1">
             {menu.link ? (
               <Link to={menu.link} className="w-full">
-                <div className="w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
+                <div className="flex content-center gap-5 w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
                   <div>{menu.icon}</div>
                   <h2 className="text-xl">{menu.title}</h2>
                 </div>
@@ -120,7 +120,7 @@ const Navigation = () => {
                 onClick={handleMoreClick}
                 className="w-full relative"
               >
-                <div className="w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
+                <div className="flex content-center gap-5 w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
                   <div>{menu.icon}</div>
                   <h2 className="text-xl">{menu.title}</h2>
                 </div>
