@@ -4,8 +4,8 @@ import Navigation from './Navigation';
 const Header = () => {
   return (
     <header className="flex-col w-68 h-full px-3">
-      <h1 className="w-13 h-13 rounded-full hover:bg-black">
-        <a href="/" className="flex justify-center content-center">
+      <h1 className="py-0.5">
+        <a href="/" className="flex content-center w-fit h-13 rounded-full">
           <Logo width="50" height="30" />
         </a>
       </h1>
