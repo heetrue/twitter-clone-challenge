@@ -95,6 +95,7 @@ const MenuList = [
 ];
 
 const Navigation = () => {
+  // Dropdown
   const [isOpen, setOpen] = useState(false);
 
   const handleMoreClick = () => {
@@ -124,7 +125,7 @@ const Navigation = () => {
                   <div>{menu.icon}</div>
                   <h2 className="text-xl mr-4">{menu.title}</h2>
                 </div>
-                {/* DROPDOWN MENU */}
+                {/* Dropdown Menu */}
                 <div className="flex-col absolute bottom-0 bg-white rounded drop-shadow-md">
                   {menu.dropdown &&
                     isOpen &&
