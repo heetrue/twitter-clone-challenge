@@ -13,37 +13,37 @@ import MoreCircleIcon from 'assets/icons/icon-more-circle.svg';
 const MenuList = [
   {
     title: 'Home',
-    link: '/',
+    route: '/',
     icon: <HomeIcon width="26" height="26" fill="#0f1419" />,
   },
   {
     title: 'Explore',
-    link: '/explore',
+    route: '/explore',
     icon: <HashIcon width="26" height="26" fill="#0f1419" />,
   },
   {
     title: 'Notifications',
-    link: '/notifications',
+    route: '/notifications',
     icon: <BellIcon width="26" height="26" fill="#0f1419" />,
   },
   {
     title: 'Messages',
-    link: '/messages',
+    route: '/messages',
     icon: <MessageIcon width="26" height="26" fill="#0f1419" />,
   },
   {
     title: 'Bookmarks',
-    link: '/bookmarks',
+    route: '/bookmarks',
     icon: <BookmarkIcon width="26" height="26" fill="#0f1419" />,
   },
   {
     title: 'Lists',
-    link: '/lists',
+    route: '/lists',
     icon: <FileIcon width="26" height="26" fill="#0f1419" />,
   },
   {
     title: 'Profile',
-    link: '/profile',
+    route: '/profile',
     icon: <UserIcon width="26" height="26" fill="#0f1419" />,
   },
   {
@@ -52,43 +52,43 @@ const MenuList = [
     dropdown: [
       {
         title: 'Topics',
-        link: '/topics',
+        route: '/topics',
       },
       {
         title: 'Moments',
-        link: '/i/moment_maker',
+        route: '/i/moment_maker',
       },
       {
         title: 'Newsletters',
-        link: '/i/newsletters',
+        route: '/i/newsletters',
       },
       {
         title: 'Twitter for Professionals',
-        link: '/i/flow/convert_to_professional',
+        route: '/i/flow/convert_to_professional',
       },
       {
         title: 'Twitter Ads',
-        link: '/',
+        route: '/',
       },
       {
         title: 'Analytics',
-        link: '/',
+        route: '/',
       },
       {
         title: 'Settings and privacy',
-        link: '/settings/account',
+        route: '/settings/account',
       },
       {
         title: 'Help Center',
-        link: '/',
+        route: '/',
       },
       {
         title: 'Display',
-        link: '/i/display',
+        route: '/i/display',
       },
       {
         title: 'Keyboard shortcuts',
-        link: '/i/keyboard_shortcuts',
+        route: '/i/keyboard_shortcuts',
       },
     ],
   },
@@ -122,8 +122,8 @@ const Navigation = () => {
       <ul>
         {MenuList.map(menu => (
           <li key={menu.title} className="py-1">
-            {menu.link ? (
-              <Link to={menu.link} className="w-full">
+            {menu.route ? (
+              <Link to={menu.route} className="w-full">
                 <div className="flex content-center gap-5 w-fit p-3 rounded-full hover:bg-[#E7E7E7] transition duration-100 hover:ease-in">
                   <div>{menu.icon}</div>
                   <h2 className="text-xl mr-4">{menu.title}</h2>
@@ -147,7 +147,7 @@ const Navigation = () => {
                   {menu.dropdown &&
                     isOpen &&
                     menu.dropdown.map(item => (
-                      <Link key={item.title} to={item.link}>
+                      <Link key={item.title} to={item.route}>
                         <h3 className="p-4 text-15 text-left hover:bg-slate-100 transition duration-100 hover:ease-in">
                           {item.title}
                         </h3>
