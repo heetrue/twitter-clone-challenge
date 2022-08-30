@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import HomeIcon from 'assets/icons/icon-home.svg';
@@ -97,10 +97,24 @@ const MenuList = [
 const Navigation = () => {
   // Dropdown
   const [isOpen, setOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleMoreClick = () => {
     return setOpen(prev => !prev);
   };
+
+  const handleClickOutside = useCallback(({ target }: any) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(target)) {
+      setOpen(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      window.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav>
@@ -126,11 +140,14 @@ const Navigation = () => {
                   <h2 className="text-xl mr-4">{menu.title}</h2>
                 </div>
                 {/* Dropdown Menu */}
-                <div className="flex-col absolute bottom-0 bg-white rounded drop-shadow-md">
+                <div
+                  ref={dropdownRef}
+                  className="flex-col absolute bottom-0 bg-white rounded drop-shadow-md"
+                >
                   {menu.dropdown &&
                     isOpen &&
                     menu.dropdown.map(item => (
-                      <Link to={item.link}>
+                      <Link key={item.title} to={item.link}>
                         <h3 className="p-4 text-15 text-left hover:bg-slate-100 transition duration-100 hover:ease-in">
                           {item.title}
                         </h3>
