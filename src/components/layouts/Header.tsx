@@ -5,7 +5,7 @@ import MoreIcon from 'assets/icons/icon-more.svg';
 
 const Header = () => {
   return (
-    <header className="flex flex-col justify-between justify-self-end min-w-[275px] h-screen px-3 overflow-y-auto">
+    <header className="flex flex-col justify-between justify-self-end fixed top-0 z-[3] min-w-[275px] h-screen px-3 overflow-x-hidden overflow-y-auto">
       <div>
         <h1 className="py-0.5">
           <a href="/" className="flex content-center w-fit h-13 rounded-full">
