@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import {
+  Dispatch,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { Link } from 'react-router-dom';
 
 import HomeIcon from 'assets/icons/icon-home.svg';
@@ -57,6 +64,10 @@ const MenuList = [
       {
         title: 'Moments',
         route: '/i/moment_maker',
+      },
+      {
+        title: 'Twitter Circle',
+        route: '/i/circles',
       },
       {
         title: 'Newsletters',
@@ -149,10 +160,10 @@ const Navigation = () => {
                 {/* Dropdown Menu */}
                 <div
                   ref={dropdownRef}
-                  className="flex-col absolute bottom-0 bg-white rounded drop-shadow-md"
+                  className="flex-col fixed top-0 bg-white rounded drop-shadow-md"
                 >
-                  {menu.dropdown &&
-                    isOpen &&
+                  {isOpen &&
+                    menu.dropdown &&
                     menu.dropdown.map(item => (
                       <Link key={item.title} to={item.route}>
                         <h3 className="p-4 text-15 text-left hover:bg-slate-100 transition duration-100 hover:ease-in">
@@ -174,9 +185,61 @@ const Navigation = () => {
       >
         Tweet
       </button>
-      {showModal && <div>Modal is open</div>}
+      {showModal && <Modal setState={setShowModal} />}
     </nav>
   );
 };
 
 export default Navigation;
+
+interface ModalProps {
+  setState: Dispatch<SetStateAction<boolean>>;
+}
+
+const Modal = ({ setState }: ModalProps) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = useCallback(({ target }: any) => {
+    if (modalRef.current && !modalRef.current.contains(target)) {
+      setState(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      window.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleCloseModal = () => {
+    return setState(false);
+  };
+
+  return (
+    <div className="fixed bottom-0 left-0 w-screen h-screen bg-black/40">
+      <div
+        ref={modalRef}
+        className="flex flex-col relative top-11 left-1/3 shrink w-[600px] h-[320px] bg-white rounded-3xl"
+      >
+        <header className="w-full p-4">
+          <button
+            type="button"
+            onClick={handleCloseModal}
+            className="rounded-full hover:bg-slate-100 transition duration-100 hover:ease-in"
+          >
+            X
+          </button>
+        </header>
+        <div className="px-4">
+          <button>Everyone</button>
+          <textarea name="" placeholder="What's happening?"></textarea>
+          <button type="button">Everyone can reply</button>
+        </div>
+        <footer>
+          <button type="submit">Tweet</button>
+        </footer>
+      </div>
+    </div>
+  );
+};
